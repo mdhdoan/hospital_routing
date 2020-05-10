@@ -6,7 +6,7 @@
 	* Food: 
 		* All staying patients will have 3 meals a day
 		* Medical staffs will work in 3 shifts, each will have their own meal. Hence medical staffs will also require 3 meals a day. Those who work on the night shift (11:00pm-7:00am) are also volunteers, these numbers can be changed daily, due to patients' requirement
-		* Administration staffs works from 9-5, therefore they will have 1 meal a day at the hospital
+		* Hospital's staffs works from 9-5, therefore they will have 1 meal a day at the hospital
 	* Medicine:
 		* These are for the medical staffs usages only, to give to the patients
 	* Medical Equipment:
@@ -24,13 +24,25 @@
 	* Optimizing of the solution can be done by:
 		* Reusing transports as much as possible
 		* Reducing the cost as much as possible
-* **Solution**:
-	This route finding problem is an application case of the vehicle routing problem, on a graph represented with:
-	  * Route's travelling time as weighted edges
+* **Formulating the problem**:
+	* This route finding problem is an application case of the vehicle routing problem. We represent the problem on a graph with:
+		* Route's travelling time as weighted edges
 		* Hospitals as vertices, each with a cost per delivery value . 
-	Find route(s) that can reach as many vertices within a time limit. The routes must satisfy both the time constraints and optimizes the cost.
+	* Find route(s) that can reach as many vertices within a time limit. The routes must satisfy both the time constraints and optimizes the cost.
+* **Solution**:
+	* Since this is a vehicle routing problem, one can attempt to brute force search for the most optimal path, or use a greedy approach to select only the most optimal paths between the hospitals.
+	* Let's assume the followings:
+		* The weights of the edges represent the time it takes to travel between hospitals.
+		* Each hospital currently takes no time to unload goods and items
+		* The supply centre will be next to the first hospital of the route, eliminating the time it takes to travel to it.
+		* Between the time of supplies reaching the centre and the time that all hospitals must receive their supplies is fully available for delivery.
+		* The graph is one whole complete and connected graph.
+	* In this problem, we will be performing the greedy algorithm. It shall be the first step that can guarantee a feasible solution. 
 * **How to approach solution**:
-	Find routes that would satisfies the time constraints before optimizing the cost.
+	* First of all, since this is a problem that can be occured anywhere, therefore our solution must be generic. 
+	* Our approach, for the greedy algorithm, would be to find available paths that would allow us to reach the hospitals in time, yet cheapest to add to our route. 
+	* To do this, we would need to find all possible routes from a starting location. In this case, we are assuming it to be one of the hospitals.
+	* After finding all possible routes from all hospitals, we can then begin to sort them and find the route that passes through the most hospitals before ending.
 * **How to approach algorithm**:
 	Since we need to create routes to traverse all hospitals, this is an application case of the vehicle routing problem. 
 	An option on tackling this problem is by using a greedy algorithm: 
