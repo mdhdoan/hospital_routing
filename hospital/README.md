@@ -68,9 +68,20 @@
 * **Example of Algorithm works**:
 	Include pics and explanation
 * **Current drawback of algorithm**:
-	Current assumption:
-		The whole graph is now a complete connected. What if it's not?
-			How this can be address?
-		The current total route time does not account for the window of delivery, as well as time for unloading
-			How this can be address?
+	* Current assumption:
+		* The weights of the edges represent the time it takes to travel between hospitals:
+			* This can actually be fluctuate with the traffic and constructions. In a future update of this algorithm would have to account fo this.
+		* Each hospital currently takes no time to unload goods and items:
+			* This is an unrealistic thing in the real world. Each time of unloading would be proportional to the delivery load that the location is receiving. 
+			* In the future, perhaps the time for unloading at each hospital can be calculated in proportion to their speed, and then each vertex would have an additional weight to account for this in the calculation.
+		* The supply centre will be next to the first hospital of the route, eliminating the time it takes to travel to it:
+			* In real life, this is not feasible, as there are no guarantee that there would be spaces enough next to a hospital to have for a centre.
+			* In the future, there would also be needing another calculation of time travel to the first hospital, as well as adjustment to the time traveling. This could also affect the algorithm, as it now need to account for the location of the centre for feasible location.
+		* Between the time of supplies reaching the centre and the time that all hospitals must receive their supplies is fully available for delivery:
+			* In real life, it takes time for supplies and materials to arrive at the centre. Then it has to store those until the time of delivery. This would actually increase the cost of operating of the centre, now needed to upgrade itself to account for the materials it would store.
+			* In addition to the time the supplies are delivered, there must also be time to process the items prior to shipping them to the hospitals. This would cost more time to process, and greatly lower the available time for delivery.
+			* Lastly, the delivery also varies based on what day does the material arrives, and how they can be distributed without too many trucks clogging the traffic, enlarging the time it takes to travel to hospitals.
+		* The graph is one whole complete and connected graph.
+			* In real life, and accounting for the fact stated in previous point, there might not be time to travel between two hospitals. Instead of including these paths in our calculation, thus slowed down the calculation, we can omit them from the graph. 
+			* This would bring situations where many optimal routes of a graph pass through a hospital. If that point is reserved for other routes, and its removal in the algorithm step cause the graph to be disconnected, the algorithm must then consider this, and perform in accordance to this obstacle
 * **Conclusion**:
