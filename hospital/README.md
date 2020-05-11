@@ -71,27 +71,27 @@
 	
 	![2 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-28-16.png)
 	
-	As you can see from the pathing, there exists a path between 2 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 12, and the path travels from ... to ...
+	As you can see from the pathing, there exists a path between 2 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 12, and the path travels from MF to CH
 	
 	* A complete connect graph of 3 hospitals
 	
 	![3 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-29-04.png)
 	
-	As you can see from the pathing, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as ..., and the path travels from ... to ... to ... 
+	As you can see from the pathing, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 23, and the path travels from OC to MF to CH 
 	Due to the fact that it takes the same amount of time going both way in a path, there is no difference in the order of the hospitals in the path
 	
 	* A complete connect graph of 4 hospitals
 	
 	![4 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-29-27.png)
 	
-	As you can see from the pathing, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as ..., and the path travels from ... to ... to ... to ...
+	As you can see from the pathing, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 24, and the path travels from OC to MF to OG to CH
 	Due to the fact that it takes the same amount of time going both way in a path, there is no difference in the order of the hospitals in the path
 	
 	* A complete connect graph of all hospitals in Ottawa-Gatineau region
 	
 	![all hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-30-17.png)
 	
-	As you can see from the pathing, there exists a path between all hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as ...
+	As you can see from the pathing, there exists a path between all hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 53
 	Due to the fact that it takes the same amount of time going both way in a path, there is no difference in the order of the hospitals in the path
 	
 * **Current drawback of algorithm**:
