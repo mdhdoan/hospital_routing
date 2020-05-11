@@ -50,13 +50,13 @@
 		* Vertices will be for the hospitals
 		* Edges will be for the routing between hospitals
 		* Graphs will be a connected component of vertices and edges. In some cases, there can be multiple graphs, for example if the city has hospitals but they are too far apart from each other to be reached within a contraint limit.
-	* Our [vertices].(Vertex.py) will have details of:
+	* Our [vertices](Vertex.py) will have details of:
 		* Hospital's name/code
 		* All routes going from/to the vertices
-	* Our [edges].(Edge.py) will have details of:
+	* Our [edges](Edge.py) will have details of:
 		* Vertices that are the ends of the edge
 		* Value of the edge (in this case, it would be the time travel between the hospitals)
-	* Our [graphs].(Graph.py) will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
+	* Our [graphs](Graph.py) will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
 	* The algorithm be work by:
 		* Going through the vertices one at a time, while performing the greedy algorithm to find all available routes from that vertex. 
 			* Since we are considering the fact that the route between 2 hospitals are identical, this method would work for travelling both ways.
