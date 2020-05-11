@@ -61,27 +61,27 @@
 	* The algorithm be work by the following order:
 		The algorithm goes through the vertices one at a time, while performing the greedy algorithm to find all available routes from that vertex. 
 
-		!()
+		![Iterate hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-08-40.png)
 
-			* Since the assumption is that the route between 2 hospitals are identical, and the travelling time difference in both directions are negligible, this method would work for travelling to and from any vertices.
+		Since the assumption is that the route between 2 hospitals are identical, and the travelling time difference in both directions are negligible, this method would work for travelling to and from any vertices.
 
-			!()
+		![Time is the same back and forth](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-08-44.png)
 
 		After retrieving all routes, then the algorithm proceed to re organized them by the number of hospitals passing through, and then by the time it takes to travel through the path. 
 		
-		!()
+		![Reordered lists](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-08-51.png)
 		
-			* Currently, the most optimal route would be shown as the route that passes through the most hospitals, while consumes the least amount of time.
+		Currently, the most optimal route would be shown as the route that passes through the most hospitals, while consumes the least amount of time.
 
-			!()
+		![Optimal](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-08-27.png)
 
 		After retrieving all the paths, the graph then perform a comparison between all the vertices in the route and the graph. If not all vertices are processed, then the algorithm would then update the graph to construct a smaller graph with the remaining vertices and edges, before repeating the process again.
 		
-		!()
+		![Update Graph](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-08-32.png)
 		
 		Only when we reach the stage where there are no vertices unprocessed, will we stop the algorithm. The result will contains of a list of routes that can reach as many hospitals as it can, within a time limit.
 		
-		!()
+		![Last step](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-08-36.png)
 	
 	The algorithm is guaranteed to return a route, since it iterates through the whole graph, and check every vertices for possible routes.
 
