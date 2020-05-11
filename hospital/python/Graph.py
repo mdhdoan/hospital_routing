@@ -248,6 +248,7 @@ class Graph:
 
 
 if __name__ == "__main__":
+    
     from Test_data import vertex_list, edge_list
     assert vertex_list and edge_list
     max_time = 60

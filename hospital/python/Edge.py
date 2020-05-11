@@ -49,7 +49,6 @@ class Edge:
 
 
 if __name__ == "__main__":
-
     from Test_data import edge_list, vertex_list
     from Vertex import Vertex
     assert edge_list and len(edge_list) > 0

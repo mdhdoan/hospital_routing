@@ -47,7 +47,6 @@ class Vertex:
 
 
 if __name__ == "__main__":
-
     from Test_data import vertex_list
     assert vertex_list and len(vertex_list) > 1
 
