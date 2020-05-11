@@ -68,9 +68,13 @@
 * **Example of Algorithm works**:
 	In the file, there include [a test data file].(Testdata.py). In there are the test necessary to test 4 cases: 
 	* A complete connect graph of 2 hospitals 
+	![2 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-28-16.png)
 	* A complete connect graph of 3 hospitals
-	* A complete connect graph of 4 hospitals  
-	* A complete connect graph of all hospitals in Ottawa-Gatineau region 
+	![3 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-29-04.png)
+	* A complete connect graph of 4 hospitals
+	![4 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-29-27.png)
+	* A complete connect graph of all hospitals in Ottawa-Gatineau region
+	![all hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-30-17.png)
 * **Current drawback of algorithm**:
 	* Current assumption:
 		* The weights of the edges represent the time it takes to travel between hospitals:
@@ -92,10 +96,9 @@
 	* From researches online, there have been many attempts to solve this problem. Some of them, such as the research by Duque-Uribe, Sarache, and Gutiérrez [1](Research_1) and by Li, Ma, Shi and Qian [2](Research_2), both shows how other algorithm can be used to solve the problem. This, however, is only an attempt at solving the hospital supply problem, using a primitive greedy algorithm to solve.
 
 [1] - https://www.researchgate.net/publication/336820797_Sustainable_Supply_Chain_Management_Practices_and_Sustainable_Performance_in_Hospitals_A_Systematic_Review_and_Integrative_Framework
+
 [2] - https://www.hindawi.com/journals/mpe/2016/6153898/
+
 (Research_1):https://www.researchgate.net/publication/336820797_Sustainable_Supply_Chain_Management_Practices_and_Sustainable_Performance_in_Hospitals_A_Systematic_Review_and_Integrative_Framework
+
 (Research_2):https://www.hindawi.com/journals/mpe/2016/6153898/
-(Vertex.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Vertex.py
-(Edge.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Edge.py
-(Graph.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Graph.py
-(Testdata.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Test_data.py
