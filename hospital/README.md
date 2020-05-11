@@ -40,12 +40,7 @@
 		* The graph is one whole complete and connected graph.
 	* In this problem, the preferable method will be using a greedy algorithm. It shall be the first step that can guarantee a feasible solution. 
 * **How to approach solution using the greedy algorithm**:
-	First of all, since this is a problem that can be occured anywhere, therefore the solution must be generic. 
-	The approach, for the greedy algorithm, would be to find available paths that would allow transports to reach the hospitals in time, yet cheapest to add to the delivery route.
-	Firstly, the algorithm would need to find all possible routes from a starting location. In this case, it is one of the hospitals.
-	After finding all possible routes from all hospitals, then the algorithm will begin to sort them and find the route that passes through the most hospitals before ending (satisfying the constraints), while taking the least amount of time (satisfying the optimization).
-	After having the route, the algorithm checks the route with the list of the hospitals to find if it has covered all the hospitals, or not. If not, then it repeats itself on the remaining hospitals and find the next optimal route to be added.
-	Only when there are no hospitals remaining, then would the algorithm stop.
+	First of all, since this is a problem that can be occured anywhere, therefore the solution must be generic. The approach, for the greedy algorithm, would be to find available paths that would allow transports to reach the hospitals in time, yet cheapest to add to the delivery route. Firstly, the algorithm would need to find all possible routes from a starting location. In this case, it is one of the hospitals. After finding all possible routes from all hospitals, then the algorithm will begin to sort them and find the route that passes through the most hospitals before ending (satisfying the constraints), while taking the least amount of time (satisfying the optimization). After having the route, the algorithm checks the route with the list of the hospitals to find if it has covered all the hospitals, or not. If not, then it repeats itself on the remaining hospitals and find the next optimal route to be added. Only when there are no hospitals remaining, then would the algorithm stop.
 * **More details on the greedy algorithm**:
 	* Firstly, we categorized the graph into 3 parts: 
 		* Vertices will be for the hospitals
