@@ -93,19 +93,19 @@
 	
 	![2 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-36-47.png)
 	
-		From the pathing of the illustration above, there exists a path between 2 hospitals, and since the time travel is within time limit, the algorithm returns a valid path with total time as 12, and the path travels from MF to CH, indicated in red color. As there are only 2 hospitals, the only available - and optimal - path is the path between them.
+	From the pathing of the illustration above, there exists a path between 2 hospitals, and since the time travel is within time limit, the algorithm returns a valid path with total time as 12, and the path travels from MF to CH, indicated in red color. As there are only 2 hospitals, the only available - and optimal - path is the path between them.
 	
 	* A complete connect graph of 3 hospitals
 	
 	![3 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-36-45.png)
 	
-		Based on the pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 23, and the path travels from OC to MF to CH, indicated in red color. Given the fact that there are 3 hospitals, it would take at least 2 paths to travel between them all. In this case, the path can be ranked by their time and the algorithm would take the one with shortest time. 
+	Based on the pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 23, and the path travels from OC to MF to CH, indicated in red color. Given the fact that there are 3 hospitals, it would take at least 2 paths to travel between them all. In this case, the path can be ranked by their time and the algorithm would take the one with shortest time. 
 	
 	* A complete connect graph of 4 hospitals
 	
 	![4 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-36-35.png)
 	
-		The pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 24, and the path travels from OC to MF to OG to CH, indicated in red color. In the case of a more complicated problem than the 2 before, the algorithm can demonstrates the benefit of re-ordering the results to return the optimal result.
+	The pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 24, and the path travels from OC to MF to OG to CH, indicated in red color. In the case of a more complicated problem than the 2 before, the algorithm can demonstrates the benefit of re-ordering the results to return the optimal result.
 		
 	* A complete connect graph of all hospitals in Ottawa-Gatineau region
 	
