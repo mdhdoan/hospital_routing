@@ -122,6 +122,7 @@
 * **Conclusion**:
 	* From researches online, there have been many attempts to solve this problem. Some of them, such as the research by Duque-Uribe, Sarache, and Gutiérrez [1] and by Li, Ma, Shi and Qian [2], both shows how other algorithm can be used to solve the problem. This, however, is only an attempt at solving the hospital supply problem, using a primitive greedy algorithm to solve. While the algorithm is primitive, not fully taken into account the wide variety of other factors of the real world, it achieved the goal of resulting a list of routes between hospitals that is optimal. It is fully understood that there are many improvements that can be made for this algorithm, but that is for another update in the future of this algorithm. 
 * **References**:
+
 [1] - https://www.researchgate.net/publication/336820797_Sustainable_Supply_Chain_Management_Practices_and_Sustainable_Performance_in_Hospitals_A_Systematic_Review_and_Integrative_Framework
 
 [2] - https://www.hindawi.com/journals/mpe/2016/6153898/
