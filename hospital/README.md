@@ -1,8 +1,8 @@
 # hospital_distribution_outline: 
 * **Abstract**:
-	In the real world, there are many problems in managing a supply chain. Hospital supply chain is but a small part of the industry, yet extremely vital. Without sufficient supplies of medicine and medical supplies, hospitals cannot function properly. In this situation, we are given the task of designing and implementing a supply plan for hospitals, specifically in Ottawa-Gatineau. Given the propblem of supplying hospitals with their needs, we would attempt to apply a greedy algorithm to find the optimal routes available to traverse and delivery supplies.
+	In the real world, there are many problems in managing a supply chain. Hospital supply chain is but a small part of the industry, yet extremely vital. Without sufficient supplies of medicine and medical supplies, hospitals cannot function properly. In this situation, the task given is to design and implement a supply plan for hospitals, specifically in Ottawa-Gatineau. Given the propblem of supplying hospitals with their needs, this work is a description of an attempt to apply a generic greedy algorithm to find the optimal routes available to traverse and delivery supplies.
 * **Introduction**:
-	Hospital supplying is an important aspect in keeping hospitals running and operating. A hospital needs many things to keep it running, but in this problem, they shall be refined into 5 categories:
+	* Hospital supplying is an important aspect in keeping hospitals running and operating. A hospital needs many things to keep it running, but in this problem, they shall be refined into 5 categories:
 	* Food: 
 		* All staying patients will have 3 meals a day
 		* Medical staffs will work in 3 shifts, each will have their own meal. Hence medical staffs will also require 3 meals a day. Those who work on the night shift (11:00pm-7:00am) are also volunteers, these numbers can be changed daily, due to patients' requirement
@@ -15,48 +15,49 @@
 		* These are for the hospital's staffs usages only
 	* Hospital Supplies:
 		* These are for the hospital's staffs usages only
+	* NOTE: As of right now, all these values shall be stored in a separate file, not yet implemented into the code.
 * **Problem**:	
 	* One need to find the path to delivery all supplies. Each hospital has a different amount of staffs and patients, therefore having different weight requirement.
 	* Some constraints that can be put on are:
 		* Time constraints: each hospital has a deadline that must be met
 		* Weight constraints: each hospital has a certain amount of weight of required items that changes daily. This is because the patients number changes daily
-		* Transport constraints: we only have a limited amount of transports. The problem is now how to arrange routes and orders of the hospitals to meet their demands
+		* Transport constraints: There are only a limited amount of transports. The problem is now how to arrange routes and orders of the hospitals to meet their demands
 	* Optimizing of the solution can be done by:
-		* Reusing transports as much as possible
-		* Reducing the cost as much as possible
+		* Reusing transports as much as possible. This ensures that productivity is as high as possible
+		* Reducing the cost as much as possible. This ensures that profit are as high as possible
 * **Formulating the problem**:
-	* This route finding problem is an application case of the vehicle routing problem. We represent the problem on a graph with:
+	* This route finding problem is an application case of the vehicle routing problem. The problem shall be represented by the following:
 		* Route's travelling time as weighted edges
 		* Hospitals as vertices, each with a cost per delivery value . 
 	* Find route(s) that can reach as many vertices within a time limit. The routes must satisfy both the time constraints and optimizes the cost.
 * **Solution**:
 	* Since this is a vehicle routing problem, one can attempt to brute force search for the most optimal path, or use a greedy approach to select only the most optimal paths between the hospitals.
-	* Let's assume the followings:
+	* Assume the followings:
 		* The weights of the edges represent the time it takes to travel between hospitals.
 		* Each hospital currently takes no time to unload goods and items
 		* The supply centre will be next to the first hospital of the route, eliminating the time it takes to travel to it.
 		* Between the time of supplies reaching the centre and the time that all hospitals must receive their supplies is fully available for delivery.
 		* The graph is one whole complete and connected graph.
-	* In this problem, we will be performing the greedy algorithm. It shall be the first step that can guarantee a feasible solution. 
+	* In this problem, the preferable method will be using a greedy algorithm. It shall be the first step that can guarantee a feasible solution. 
 * **How to approach solution using the greedy algorithm**:
-	* First of all, since this is a problem that can be occured anywhere, therefore our solution must be generic. 
-	* Our approach, for the greedy algorithm, would be to find available paths that would allow us to reach the hospitals in time, yet cheapest to add to our route. 
-	* To do this, we would need to find all possible routes from a starting location. In this case, we are assuming it to be one of the hospitals.
-	* After finding all possible routes from all hospitals, we can then begin to sort them and find the route that passes through the most hospitals before ending (satisfying the constraints), while taking the least amount of time (satisfying the optimization).
-	* After having the route, we can check it with the list of the hospitals to find if it has covered all the hospitals, or not. If not, then we can repeat our algorithm on the remaining hospitals and find the next optimal route to be added.
-	* Only when we reach the stage where there are no hospitals remaining, then we would stop the algorithm.
+	* First of all, since this is a problem that can be occured anywhere, therefore the solution must be generic. 
+	* The approach, for the greedy algorithm, would be to find available paths that would allow transports to reach the hospitals in time, yet cheapest to add to the delivery route.
+	* Firstly, the algorithm would need to find all possible routes from a starting location. In this case, it is one of the hospitals.
+	* After finding all possible routes from all hospitals, then the algorithm will begin to sort them and find the route that passes through the most hospitals before ending (satisfying the constraints), while taking the least amount of time (satisfying the optimization).
+	* After having the route, the algorithm checks the route with the list of the hospitals to find if it has covered all the hospitals, or not. If not, then it repeats itself on the remaining hospitals and find the next optimal route to be added.
+	* Only when there are no hospitals remaining, then would the algorithm stop.
 * **More details on the greedy algorithm**:
 	* Firstly, we categorized the graph into 3 parts: 
 		* Vertices will be for the hospitals
 		* Edges will be for the routing between hospitals
 		* Graphs will be a connected component of vertices and edges. In some cases, there can be multiple graphs, for example if the city has hospitals but they are too far apart from each other to be reached within a contraint limit.
-	* Our [vertices](Vertex.py) will have details of:
+	* [Vertices](Vertex.py) will have details of:
 		* Hospital's name/code
 		* All routes going from/to the vertices
-	* Our [edges](Edge.py) will have details of:
+	* [Edges](Edge.py) will have details of:
 		* Vertices that are the ends of the edge
 		* Value of the edge (in this case, it would be the time travel between the hospitals)
-	* Our [graphs](Graph.py) will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
+	* [Graphs](Graph.py) will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
 	* The algorithm be work by:
 		* Going through the vertices one at a time, while performing the greedy algorithm to find all available routes from that vertex. 
 			* Since we are considering the fact that the route between 2 hospitals are identical, this method would work for travelling both ways.
