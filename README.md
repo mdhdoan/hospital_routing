@@ -1,4 +1,4 @@
-# hospital_distribution_outline: 
+# A greedy algorithm of vehicle routing problem: 
 * **Abstract**:
 	In the real world, there are many problems in managing a supply chain. Hospital supply chain is but a small part of the industry, yet extremely vital. Without sufficient supplies of medicine and medical supplies, hospitals cannot function properly. In this situation, the task given is to design and implement a supply plan for hospitals, specifically in Ottawa-Gatineau. Given the propblem of supplying hospitals with their needs, this work is a description of an attempt to apply a generic greedy algorithm to find the optimal routes available to traverse and delivery supplies.
 * **Introduction**:
