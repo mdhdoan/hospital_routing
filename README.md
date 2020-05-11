@@ -93,19 +93,19 @@
 	
 	![2 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-36-47.png)
 	
-		From the pathing of the illustration above, there exists a path between 2 hospitals, and since the time travel is within time limit, the algorithm returns a valid path with total time as 12, and the path travels from MF to CH, indicated in red color. As there are only 2 hospitals, the only available - and optimal - path is the path between them.
+	From the pathing of the illustration above, there exists a path between 2 hospitals, and since the time travel is within time limit, the algorithm returns a valid path with total time as 12, and the path travels from MF to CH, indicated in red color. As there are only 2 hospitals, the only available - and optimal - path is the path between them.
 	
 	* A complete connect graph of 3 hospitals
 	
 	![3 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-36-45.png)
 	
-		Based on the pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 23, and the path travels from OC to MF to CH, indicated in red color. Given the fact that there are 3 hospitals, it would take at least 2 paths to travel between them all. In this case, the path can be ranked by their time and the algorithm would take the one with shortest time. 
+	Based on the pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 23, and the path travels from OC to MF to CH, indicated in red color. Given the fact that there are 3 hospitals, it would take at least 2 paths to travel between them all. In this case, the path can be ranked by their time and the algorithm would take the one with shortest time. 
 	
 	* A complete connect graph of 4 hospitals
 	
 	![4 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-11%2011-36-35.png)
 	
-		The pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 24, and the path travels from OC to MF to OG to CH, indicated in red color. In the case of a more complicated problem than the 2 before, the algorithm can demonstrates the benefit of re-ordering the results to return the optimal result.
+	The pathing of the illustration above, there exists a path between 3 hospitals, and since the time travel is within our limit, the algorithm returns a valid path with total time as 24, and the path travels from OC to MF to OG to CH, indicated in red color. In the case of a more complicated problem than the 2 before, the algorithm can demonstrates the benefit of re-ordering the results to return the optimal result.
 		
 	* A complete connect graph of all hospitals in Ottawa-Gatineau region
 	
@@ -128,7 +128,9 @@
 	
 	Lastly, the delivery also varies based on what day does the material arrives, and how they can be distributed without too many trucks clogging the traffic, enlarging the time it takes to travel to hospitals. The graph is one whole complete and connected graph. In real life, and accounting for the fact stated in previous point, there might not be time to travel between two hospitals. Instead of including these paths in our calculation, thus slowed down the calculation, we can omit them from the graph. This would bring situations where many optimal routes of a graph pass through a hospital. If that point is reserved for other routes, and its removal in the algorithm step cause the graph to be disconnected, the algorithm must then consider this, and perform in accordance to this obstacle
 * **Conclusion**:
-	From researches online, there have been many attempts to solve this problem. Some of them, such as the research by Duque-Uribe, Sarache, and Gutiérrez [1] and by Li, Ma, Shi and Qian [2], both shows how other algorithm can be used to solve the problem. This, however, is only an attempt at solving the hospital supply problem, using a primitive greedy algorithm to solve. While the algorithm is primitive, not fully taken into account the wide variety of other factors of the real world, it achieved the goal of resulting a list of routes between hospitals that is optimal. It is fully understood that there are many improvements that can be made for this algorithm, but that is for another update in the future of this algorithm. 
+	From researches online, there have been many attempts to solve this problem. Some of them, such as the research by Duque-Uribe, Sarache, and Gutiérrez [1] and by Li, Ma, Shi and Qian [2], both shows how other algorithm can be used to solve the problem. In their works, they used more advance algorithms to solve for more optimized routes, and with more constraints.
+    
+    This paper, however, is only an attempt at solving the hospital supply problem, using a primitive greedy algorithm to solve. While the algorithm is primitive, not fully taken into account the wide variety of other factors of the real world, it achieved the goal of resulting a list of routes between hospitals that is optimal. It is fully understood that there are many improvements that can be made for this algorithm, but that is for another update in the future of this algorithm. 
 * **References**:
 
 [1] - https://www.researchgate.net/publication/336820797_Sustainable_Supply_Chain_Management_Practices_and_Sustainable_Performance_in_Hospitals_A_Systematic_Review_and_Integrative_Framework
