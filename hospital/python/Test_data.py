@@ -9,7 +9,18 @@ vertex_list = [
     ["GH", {"weight": 30, "time": 17}]
 ]
 
-test_vertex_list = [
+test_1_vertex_list = [
+    ["CH", {"weight": 100, "time": 10}],
+    ["MF", {"weight": 90, "time": 11}]
+]
+
+test_2_vertex_list = [
+    ["CH", {"weight": 100, "time": 10}],
+    ["MF", {"weight": 90, "time": 11}],
+    ["OC", {"weight": 80, "time": 12}]
+]
+
+test_3_vertex_list = [
     ["CH", {"weight": 100, "time": 10}],
     ["MF", {"weight": 90, "time": 11}],
     ["OC", {"weight": 80, "time": 12}],
@@ -47,7 +58,17 @@ edge_list = [
     ["HH", "GH", {"distance": 20, "time": 12}]
 ]
 
-test_edge_list = [
+test_1_edge_list = [
+    ["CH", "MF", {"distance": 20, "time": 12}]
+]
+
+test_2_edge_list = [
+    ["CH", "MF", {"distance": 20, "time": 12}],
+    ["CH", "OC", {"distance": 19, "time": 11}],
+    ["MF", "OC", {"distance": 20, "time": 15}]
+]
+
+test_3_edge_list = [
     ["CH", "MF", {"distance": 20, "time": 12}],
     ["CH", "OC", {"distance": 19, "time": 11}],
     ["CH", "OG", {"distance": 5, "time": 1}],

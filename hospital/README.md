@@ -1,6 +1,6 @@
 # hospital_distribution_outline: 
 * **Abstract**:
-	Given the propblem 
+	In the real world, there are many problems in managing a supply chain. Hospital supply chain is but a small part of the industry, yet extremely vital. Without sufficient supplies of medicine and medical supplies, hospitals cannot function properly. In this situation, we are given the task of designing and implementing a supply plan for hospitals, specifically in Ottawa-Gatineau. Given the propblem of supplying hospitals with their needs, we would attempt to apply a greedy algorithm to find the optimal routes available to traverse and delivery supplies.
 * **Introduction**:
 	Hospital supplying is an important aspect in keeping hospitals running and operating. A hospital needs many things to keep it running, but in this problem, they shall be refined into 5 categories:
 	* Food: 
@@ -50,13 +50,13 @@
 		* Vertices will be for the hospitals
 		* Edges will be for the routing between hospitals
 		* Graphs will be a connected component of vertices and edges. In some cases, there can be multiple graphs, for example if the city has hospitals but they are too far apart from each other to be reached within a contraint limit.
-	* Our vertices will have details of:
+	* Our [vertices].(Vertex.py) will have details of:
 		* Hospital's name/code
 		* All routes going from/to the vertices
-	* Our edges will have details of:
+	* Our [edges].(Edge.py) will have details of:
 		* Vertices that are the ends of the edge
 		* Value of the edge (in this case, it would be the time travel between the hospitals)
-	* Our graphs will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
+	* Our [graphs].(Graph.py) will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
 	* The algorithm be work by:
 		* Going through the vertices one at a time, while performing the greedy algorithm to find all available routes from that vertex. 
 			* Since we are considering the fact that the route between 2 hospitals are identical, this method would work for travelling both ways.
@@ -66,7 +66,11 @@
 		* Only when we reach the stage where there are no vertices unprocessed, will we stop the algorithm. The result will contains of a list of routes that can reach as many hospitals as it can, within a time limit.
 	* The algorithm is guaranteed to return a route, since it iterates through the whole graph, and check every vertices for possible routes.
 * **Example of Algorithm works**:
-	Include pics and explanation
+	In the file, there include [a test data file].(Testdata.py). In there are the test necessary to test 4 cases: 
+	* A complete connect graph of 2 hospitals 
+	* A complete connect graph of 3 hospitals
+	* A complete connect graph of 4 hospitals  
+	* A complete connect graph of all hospitals in Ottawa-Gatineau region 
 * **Current drawback of algorithm**:
 	* Current assumption:
 		* The weights of the edges represent the time it takes to travel between hospitals:
@@ -85,3 +89,13 @@
 			* In real life, and accounting for the fact stated in previous point, there might not be time to travel between two hospitals. Instead of including these paths in our calculation, thus slowed down the calculation, we can omit them from the graph. 
 			* This would bring situations where many optimal routes of a graph pass through a hospital. If that point is reserved for other routes, and its removal in the algorithm step cause the graph to be disconnected, the algorithm must then consider this, and perform in accordance to this obstacle
 * **Conclusion**:
+	* From researches online, there have been many attempts to solve this problem. Some of them, such as the research by Duque-Uribe, Sarache, and Gutiérrez [1](Research_1) and by Li, Ma, Shi and Qian [2](Research_2), both shows how other algorithm can be used to solve the problem. This, however, is only an attempt at solving the hospital supply problem, using a primitive greedy algorithm to solve.
+
+[1] - https://www.researchgate.net/publication/336820797_Sustainable_Supply_Chain_Management_Practices_and_Sustainable_Performance_in_Hospitals_A_Systematic_Review_and_Integrative_Framework
+[2] - https://www.hindawi.com/journals/mpe/2016/6153898/
+(Research_1):https://www.researchgate.net/publication/336820797_Sustainable_Supply_Chain_Management_Practices_and_Sustainable_Performance_in_Hospitals_A_Systematic_Review_and_Integrative_Framework
+(Research_2):https://www.hindawi.com/journals/mpe/2016/6153898/
+(Vertex.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Vertex.py
+(Edge.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Edge.py
+(Graph.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Graph.py
+(Testdata.py):https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Test_data.py

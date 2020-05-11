@@ -166,7 +166,7 @@ class Graph:
             return None
         return longest_route_list
 
-    def greedy_algorithm(self):
+    def component_check(self):
         components_list = []
         remove_vertex_list = []
         vertex_set = self.get_vertex_set()
@@ -194,6 +194,48 @@ class Graph:
 
         return components_list
 
+    def greedy_algorithm(self, fastest_route_list, components_list, max_time):
+        optimal_route_list = []
+        while True:
+            optimal_route_list.extend(fastest_route_list)
+            if len(fastest_route_list[0][0]) == len(components_list[0]):
+                return optimal_route_list, None
+                break
+            components_set = set(components_list[0])
+            fastest_route_set = set(fastest_route_list[0][0])
+            remaining_vertex_set = components_set.difference(fastest_route_set)
+            remaining_vertex_list = []
+            for vertex in remaining_vertex_set:
+                label = vertex.get_label()
+                for vertex in vertex_list:
+                    if label == vertex[0]:
+                        remaining_vertex_list.append(vertex)
+
+            if len(remaining_vertex_set) == 1:
+                optimal_route_list.extend(list(remaining_vertex_set))
+                return optimal_route_list, None
+                break
+            label_list = []
+            for vertex in remaining_vertex_list:
+                label_list.append(vertex[0])
+            remaining_edge_list = []
+            for edge in edge_list:
+                vertex_a, vertex_b, _ = edge
+                if vertex_a in label_list\
+                        and vertex_b in label_list:
+                    remaining_edge_list.append(edge)
+
+            self = Graph(remaining_vertex_list, remaining_edge_list)
+            # test_vertex_list = self.get_vertex_set()
+            # for vertex in test_vertex_list:
+            #     complete_route_list = self.get_all_routes(vertex, max_time)
+            #     fastest_route_list = self.optimized_route_list(
+            #         complete_route_list
+            #         )
+            #     break
+
+        return optimal_route_list, self
+
     def __str__(self):
         return 'vertex_list:\n%s\nedge_list:\n%s' % (
             '\n'.join([
@@ -208,48 +250,55 @@ class Graph:
 if __name__ == "__main__":
     from Test_data import vertex_list, edge_list
     assert vertex_list and edge_list
-
+    max_time = 60
     g = Graph(vertex_list, edge_list)
-    # g = Graph(test_vertex_list, test_edge_list)
 
     for vertex in g.get_vertex_set():
         print(vertex.get_label())
-        complete_route_list = g.get_all_routes(vertex, 60)
-        # for vertex_list, route_time  in complete_route_list:
-        #     print(route_time, 'vertex_list: ',' '.join([
-        #         vertex.get_label() for vertex in vertex_list
-        #     ]))
+        complete_route_list = g.get_all_routes(vertex, max_time)
         fastest_route_list = g.optimized_route_list(complete_route_list)
         for route_vertex_list, route_time in fastest_route_list:
             print(route_time, 'fastest_route_list: ', ' '.join([
                 vertex.get_label() for vertex in route_vertex_list
             ]))
-        components_list = g.greedy_algorithm()
+        components_list = g.component_check()
         for route_vertex_list in components_list:
             print('components_list: ', ' '.join([
                 vertex.get_label() for vertex in route_vertex_list
             ]))
+        while g is not None:
+            greedy_result, new_g = g.greedy_algorithm(
+                fastest_route_list,
+                components_list,
+                max_time)
+            g = new_g
+            for route in greedy_result:
+                print('route: ', route)
+        break
 
-    # from Test_data import test_vertex_list, test_edge_list
-    # assert test_vertex_list and test_edge_list
-
-    # g = Graph(test_vertex_list, test_edge_list)
-    # # g = Graph(test_vertex_list, test_edge_list)
-
+    # from Test_data import test_3_vertex_list, test_3_edge_list
+    # assert test_3_vertex_list and test_3_edge_list
+    # vertex_list = test_3_vertex_list
+    # edge_list = test_3_edge_list
+    # g = Graph(vertex_list, edge_list)
+    # max_time = 50
     # for vertex in g.get_vertex_set():
     #     print(vertex.get_label())
-    #     complete_route_list = g.get_all_routes(vertex, 60)
-    #     # for vertex_list, route_time  in complete_route_list:
-    #     #     print(route_time, 'vertex_list: ',' '.join([
-    #     #         vertex.get_label() for vertex in vertex_list
-    #     #     ]))
+    #     complete_route_list = g.get_all_routes(vertex, max_time)
     #     fastest_route_list = g.optimized_route_list(complete_route_list)
     #     for route_vertex_list, route_time in fastest_route_list:
     #         print(route_time, 'fastest_route_list: ', ' '.join([
     #             vertex.get_label() for vertex in route_vertex_list
     #         ]))
-    #     components_list = g.greedy_algorithm()
+    #     components_list = g.component_check()
     #     for route_vertex_list in components_list:
     #         print('components_list: ', ' '.join([
     #             vertex.get_label() for vertex in route_vertex_list
     #         ]))
+    #     greedy_result, new_g = g.greedy_algorithm(
+    #         fastest_route_list,
+    #         components_list,
+    #         max_time)
+    #     for route in greedy_result:
+    #         print('route: ', route)
+    #     break
