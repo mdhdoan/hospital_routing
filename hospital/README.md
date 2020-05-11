@@ -51,23 +51,42 @@
 		* Vertices will be for the hospitals
 		* Edges will be for the routing between hospitals
 		* Graphs will be a connected component of vertices and edges. In some cases, there can be multiple graphs, for example if the city has hospitals but they are too far apart from each other to be reached within a contraint limit.
-	* [Vertices](Vertex.py) will have details of:
+	* [Vertices](https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Vertex.py) will have details of:
 		* Hospital's name/code
 		* All routes going from/to the vertices
-	* [Edges](Edge.py) will have details of:
+	* [Edges](https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Edge.py) will have details of:
 		* Vertices that are the ends of the edge
 		* Value of the edge (in this case, it would be the time travel between the hospitals)
-	* [Graphs](Graph.py) will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
-	* The algorithm be work by:
-		* Going through the vertices one at a time, while performing the greedy algorithm to find all available routes from that vertex. 
-			* Since we are considering the fact that the route between 2 hospitals are identical, this method would work for travelling both ways.
-		* After retrieving all routes, then we proceed to re organized them by the number of hospitals passing through, and then by the time it takes to travel through the path. 
+	* [Graphs](https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Graph.py) will have be consists of the set of vertices and edges that are connected to one another, along with the algorithm.
+	* The algorithm be work by the following order:
+		The algorithm goes through the vertices one at a time, while performing the greedy algorithm to find all available routes from that vertex. 
+
+		!()
+
+			* Since the assumption is that the route between 2 hospitals are identical, and the travelling time difference in both directions are negligible, this method would work for travelling to and from any vertices.
+
+			!()
+
+		After retrieving all routes, then the algorithm proceed to re organized them by the number of hospitals passing through, and then by the time it takes to travel through the path. 
+		
+		!()
+		
 			* Currently, the most optimal route would be shown as the route that passes through the most hospitals, while consumes the least amount of time.
-		* After retrieving all the paths, the graph then perform a comparison between all the vertices in the route and the graph. If not all vertices are processed, then the algorithm would then update the graph to construct a smaller graph with the remaining vertices and edges, before repeating the process again.
-		* Only when we reach the stage where there are no vertices unprocessed, will we stop the algorithm. The result will contains of a list of routes that can reach as many hospitals as it can, within a time limit.
-	* The algorithm is guaranteed to return a route, since it iterates through the whole graph, and check every vertices for possible routes.
+
+			!()
+
+		After retrieving all the paths, the graph then perform a comparison between all the vertices in the route and the graph. If not all vertices are processed, then the algorithm would then update the graph to construct a smaller graph with the remaining vertices and edges, before repeating the process again.
+		
+		!()
+		
+		Only when we reach the stage where there are no vertices unprocessed, will we stop the algorithm. The result will contains of a list of routes that can reach as many hospitals as it can, within a time limit.
+		
+		!()
+	
+	The algorithm is guaranteed to return a route, since it iterates through the whole graph, and check every vertices for possible routes.
+
 * **Example of Algorithm works**:
-	In the file, there include [a test data file].(Testdata.py). In there are the test necessary to test 4 cases: 
+	In the file, there include [a test data file](https://github.com/Merith997/hospital_dist/blob/master/hospital/python/Test_data.py). In there are the test necessary to test 4 cases: 
 	* A complete connect graph of 2 hospitals
 	
 	![2 hospitals](https://github.com/Merith997/hospital_dist/blob/master/hospital/images/Screenshot%20from%202020-05-10%2021-28-16.png)
